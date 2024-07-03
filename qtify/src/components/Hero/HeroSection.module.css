@@ -5,4 +5,20 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-black);
+  padding: 5px;
+}
+
+.hero_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%; */
+  /* width: 799px;
+  height: 212px; */
+}
+
+.hero_image {
+  width: 212px;
+  height: 212px;
+  display: flex;
 }
