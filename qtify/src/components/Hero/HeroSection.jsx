@@ -1,11 +1,18 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
-import HeroImage from "../../assets/HeroImage.png";
+import HeadPhoneImage from "../../assets/vibrating-headphone.png";
 
 const HeroSection = () => {
   return (
     <div className={styles.hero}>
-      <img src={HeroImage} alt="hero" height={212} width={799} />
+      <div className={styles.hero_container}>
+        <h1>
+          100 Thousand Songs, ad-free <br></br> Over thousands podcast episodes
+        </h1>
+        <div className={styles.hero_image}>
+          <img src={HeadPhoneImage} alt="hero" />
+        </div>
+      </div>
     </div>
   );
 };
