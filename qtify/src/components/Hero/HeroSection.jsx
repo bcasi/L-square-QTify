@@ -5,13 +5,12 @@ import HeadPhoneImage from "../../assets/vibrating-headphone.png";
 const HeroSection = () => {
   return (
     <div className={styles.hero}>
-      <div className={styles.hero_container}>
-        <h1>
-          100 Thousand Songs, ad-free <br></br> Over thousands podcast episodes
-        </h1>
-        <div className={styles.hero_image}>
-          <img src={HeadPhoneImage} alt="hero" />
-        </div>
+      <div>
+        <h1>100 Thousand Songs, ad-free</h1>
+        <h1>Over thousands podcast episodes</h1>
+      </div>
+      <div>
+        <img src={HeadPhoneImage} alt="hero" width={212} height={212} />
       </div>
     </div>
   );
