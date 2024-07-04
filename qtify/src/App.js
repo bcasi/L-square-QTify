@@ -6,23 +6,33 @@ import Section from "./components/Section/Section";
 import axios from "axios";
 
 function App() {
-  const [albums, setAlbums] = useState([]);
+  const [topAlbums, setTopAlbums] = useState([]);
+  const [newAlbums, setNewAlbums] = useState([]);
 
   useEffect(() => {
-    const getAlbums = () => {
+    const getTopAlbums = () => {
       axios.get(`https://qtify-backend-labs.crio.do/albums/top`).then((res) => {
         const albumsData = res.data;
-        console.log(res.data);
-        setAlbums(albumsData);
+        setTopAlbums(albumsData);
       });
     };
-    getAlbums();
+
+    const getNewAlbums = () => {
+      axios.get(`https://qtify-backend-labs.crio.do/albums/new`).then((res) => {
+        const albumsData = res.data;
+        console.log(res.data);
+        setNewAlbums(albumsData);
+      });
+    };
+    getTopAlbums();
+    getNewAlbums();
   }, []);
   return (
     <div>
       <Navbar />
       <HeroSection />
-      <Section data={albums} type="albums" title="Top Albums" />
+      <Section data={topAlbums} type="albums" title="Top Albums" />
+      <Section data={newAlbums} type="albums" title="New Albums" />
     </div>
   );
 }
