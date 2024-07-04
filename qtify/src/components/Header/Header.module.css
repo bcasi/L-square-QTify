@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_title {
+  color: var(--color-white);
+}
+
+.collapse {
+  color: var(--color-primary);
+  cursor: pointer;
+}
