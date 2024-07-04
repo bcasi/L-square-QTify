@@ -4,7 +4,7 @@ import styles from "./Section.module.css";
 import Card from "../Card/Card";
 
 const Section = ({ data, type, title }) => {
-  const [collapse, setCollapse] = useState(false);
+  const [collapse, setCollapse] = useState(true);
 
   const isCollapsed = collapse ? data : data.slice(0, 7);
 
