@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./Header.module.css";
 
-const Header = ({ title, setCollapse }) => {
+const Header = ({ title, isCarousel, setIsCarousel }) => {
   const handleCollapse = () => {
-    setCollapse((collapse) => !collapse);
+    setIsCarousel((isCarousel) => !isCarousel);
   };
   return (
     <div className={styles.header}>
       <p className={styles.header_title}>{title}</p>
       <p className={styles.collapse} onClick={handleCollapse}>
-        {title !== "Songs" ? "Collapse" : ""}
+        {isCarousel ? "Show all" : "Collapse"}
       </p>
     </div>
   );
