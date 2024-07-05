@@ -47,6 +47,14 @@
   --webkit-box-orient: vertical;
 }
 
+.link {
+  text-decoration: none;
+}
+
+.title {
+  color: inherit;
+}
+
 .card_img {
   width: 100%;
   height: 170px;

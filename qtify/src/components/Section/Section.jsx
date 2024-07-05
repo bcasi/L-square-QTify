@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import styles from "./Section.module.css";
 import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
+import ShowAll from "../Showall/ShowAll";
 
 const Section = ({ data, type, title }) => {
   const [isCarousel, setIsCarousel] = useState(true);
@@ -27,9 +28,10 @@ const Section = ({ data, type, title }) => {
                 render={(album) => <Card data={album} type={type} />}
               />
             ) : (
-              data.map((list) => {
-                return <Card key={list.id} data={list} type={type} />;
-              })
+              <ShowAll
+                data={data}
+                render={(album) => <Card data={album} type={type} />}
+              />
             )}
           </div>
         </div>
