@@ -60,7 +60,7 @@ export default function FilterTab({
           ))}
         </Tabs>
       </Box>
-      {card.map((data, i) => (
+      {filters.map((data, i) => (
         <CustomTabPanel value={selectedIndex} index={i}>
           <Carousel
             data={card}
