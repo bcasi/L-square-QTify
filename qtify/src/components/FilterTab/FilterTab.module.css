@@ -1,13 +1,5 @@
-.tab_menu {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-primary);
-}
-
 .tab {
-  color: var(--color-white);
-}
-
-.tab_panel {
-  display: flex;
+  color: var(--color-white) !important;
+  font-weight: bold;
+  text-transform: none;
 }
