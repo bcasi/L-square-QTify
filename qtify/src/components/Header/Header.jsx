@@ -1,16 +1,18 @@
 import React from "react";
 import styles from "./Header.module.css";
 
-const Header = ({ title, isCarousel, setIsCarousel }) => {
+const Header = ({ title, isCarousel = null, setIsCarousel = null }) => {
   const handleCollapse = () => {
     setIsCarousel((isCarousel) => !isCarousel);
   };
   return (
-    <div className={styles.header}>
-      <p className={styles.header_title}>{title}</p>
-      <p className={styles.collapse} onClick={handleCollapse}>
-        {isCarousel ? "Show all" : "Collapse"}
-      </p>
+    <div className={setIsCarousel ? styles.header : styles.header_2}>
+      <h3 className={styles.header_title}>{title}</h3>
+      {setIsCarousel && (
+        <h3 className={styles.collapse} onClick={handleCollapse}>
+          {isCarousel ? "Show all" : "Collapse"}
+        </h3>
+      )}
     </div>
   );
 };

@@ -1,0 +1,14 @@
+.section_wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0px 25px 0px;
+  max-width: 100%;
+  border-top: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+  padding: 25px 0px 25px 0px;
+}
+
+.homepage_wrapper {
+  /* height: 100vh; */
+  width: 100vw;
+}

@@ -4,6 +4,12 @@
   align-items: baseline;
 }
 
+.header_2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
 .header_title {
   color: var(--color-white);
 }

@@ -1,31 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { getNewAlbums, getTopAlbums } from "../api/albumsApi";
+import React from "react";
 import HeroSection from "../components/Hero/HeroSection";
 import Section from "../components/Section/Section";
+import { getGenreLabel } from "../api/songsApi";
+import { useOutletContext } from "react-router-dom";
+import styles from "./Homepage.module.css";
 
 const Homepage = () => {
-  const [data, setData] = useState({});
-
-  function getData(source, key) {
-    source().then((res) => {
-      setData((prevState) => {
-        const value = { ...prevState, [key]: res };
-        return value;
-      });
-    });
-  }
-
-  useEffect(() => {
-    getData(getTopAlbums, "topAlbums");
-    getData(getNewAlbums, "newAlbums");
-  }, []);
-
-  const { topAlbums, newAlbums } = data;
+  const { topAlbums, newAlbums, songs } = useOutletContext();
   return (
-    <div>
+    <div className={styles.homepage_wrapper}>
       <HeroSection />
       <Section data={topAlbums} type="albums" title="Top Albums" />
-      <Section data={newAlbums} type="albums" title="New Albums" />{" "}
+      <Section data={newAlbums} type="albums" title="New Albums" />
+      <div className={styles.section_wrapper}>
+        <Section
+          data={songs}
+          type="songs"
+          title="Songs"
+          fetchGenre={getGenreLabel}
+        />
+      </div>
     </div>
   );
 };
