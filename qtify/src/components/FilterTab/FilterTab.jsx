@@ -6,6 +6,7 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Carousel from "../Carousel/Carousel";
 import Card from "../Card/Card";
+import styles from "./FilterTab.module.css";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -54,9 +55,19 @@ export default function FilterTab({
           value={selectedIndex}
           onChange={handleChange}
           aria-label="basic tabs example"
+          TabIndicatorProps={{
+            style: {
+              backgroundColor: "var(--color-primary)",
+              color: "var(--color-white)",
+            },
+          }}
         >
           {filters.map((filter, i) => (
-            <Tab label={filter.label} {...a11yProps(i)} />
+            <Tab
+              className={styles.tab}
+              label={filter.label}
+              {...a11yProps(i)}
+            />
           ))}
         </Tabs>
       </Box>
