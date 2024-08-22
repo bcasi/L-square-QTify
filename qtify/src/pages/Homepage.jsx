@@ -4,6 +4,8 @@ import Section from "../components/Section/Section";
 import { getGenreLabel } from "../api/songsApi";
 import { useOutletContext } from "react-router-dom";
 import styles from "./Homepage.module.css";
+import AccordionUsage from "../components/Accordion/Accordion";
+import AccordionSection from "../components/Accordion/AccordionSection";
 
 const Homepage = () => {
   const { topAlbums, newAlbums, songs } = useOutletContext();
@@ -19,6 +21,10 @@ const Homepage = () => {
           title="Songs"
           fetchGenre={getGenreLabel}
         />
+      </div>
+      <div className={styles.faq_section}>
+        <h1>FAQs</h1>
+        <AccordionSection />
       </div>
     </div>
   );
